@@ -1,0 +1,44 @@
+﻿<!DOCTYPE HTML>
+
+<html lang="ru">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Задание 1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script>
+      function btnClick1() {
+        var value1 = parseFloat(document.test1.firstNumber.value);
+        var value2 = parseFloat(document.test1.secondNumber.value);
+        var sum = value1 + value2;
+        // alert(sum.toFixed(1));
+        document.getElementById("sum").innerHTML = sum.toFixed(1);
+        document.getElementById("form").style.visibility = "hidden";
+        document.getElementById("output").style.visibility = "visible";
+      }
+      function btnClick2() {
+        document.getElementById("form").style.visibility = "visible";
+        document.getElementById("output").style.visibility = "hidden";
+      }
+    </script>
+  </head>
+
+  <body>
+      <form id="form" name="test1" metod="post">
+         <label>Первое число:</label>
+         <input class="input" type="text" name="firstNumber" value="0.1" pattern="^[0-9]*[.,]?[0-9]+$">
+         <label>Второе число:</label>
+         <input class="input" type="text" name="secondNumber" value="0.2" pattern="^[0-9]*[.,]?[0-9]+$">
+         <input type="button" name="btn" value="Сложить" onClick="btnClick1();">
+      </form>
+
+    <div id="output">
+      <p>Результат:</p>
+      <p id="sum">result</p>
+      <input class="btn btn-primary" type="button" name="btn" value="OK" onClick="btnClick2();">
+    </div>
+
+  </body>
+
+</html>
